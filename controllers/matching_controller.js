@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 module.exports = {
-    getAdvertisers(req, res){
+    getCampaigns(req, res){
         var connection = mysql.createConnection({
             host: 'zyklusdb.ciohag68m4xh.us-east-2.rds.amazonaws.com',
             user: 'zykladmin',
@@ -37,11 +37,11 @@ module.exports = {
             if(results[0].length == 0){
                 console.log('ERROR - No records found');
                 res.status(400).send({message: 'ERROR - No records found'});
+            } else {
+                //Found records
+                console.log('OK - Successful query: "' + query + '" with results: ' + results[0]);
+                res.status(200).send(results[0]);
             }
-            
-            //Found records
-            console.log('OK - Successful query: "' + query + '" with results: ' + results[0]);
-            res.status(200).send(results[0]);
         }); 
     }
 };
