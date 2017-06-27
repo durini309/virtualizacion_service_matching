@@ -20,7 +20,7 @@ module.exports = {
         
         var query = "CALL get_active_campaigns(?)";
         var params = [
-            req.params['campaign']
+            req.query['category']
         ];
 
         connection.query(query, params, function(error, results, fields) {

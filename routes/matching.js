@@ -3,8 +3,8 @@ var router = express.Router();
 
 const matchingController = require('../controllers').matching_controller;
 
-router.get('/:campaign', function(req, res){  
-    console.log('route /:campaign reached');
+router.get('/', function(req, res){  
+    console.log(req.query.category);
     matchingController.getCampaigns(req, res);
 })
 
