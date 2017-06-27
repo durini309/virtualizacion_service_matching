@@ -3,7 +3,7 @@ var router = express.Router();
 
 const matchingController = require('../controllers').matching_controller;
 
-router.get('/advertisers', function(req, res){  
+router.get('/:campaign', function(req, res){  
     console.log('route advertisers reached');
     matchingController.getAdvertisers(req, res);
 })
