@@ -40,7 +40,7 @@ module.exports = {
             } else {
                 //Found records
                 console.log('OK - Successful query: "' + query + '" with results: ' + results[0]);
-                res.status(200).send(results[0]);
+                res.status(200).send({"response" : results[0]});
             }
         }); 
     }
